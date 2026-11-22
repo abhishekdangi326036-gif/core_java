@@ -1,0 +1,36 @@
+package co.in.rays.io;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+
+public class ReadAndWriteValidEmails {
+	
+	public static void main(String[] args) throws Exception {
+
+		FileReader source = new FileReader("C://Users//abhis//OneDrive//Desktop//email.txt");
+		FileWriter target = new FileWriter("C://Users//abhis//OneDrive//Desktop//emailvalid.txt");
+		
+		BufferedReader br = new BufferedReader(source);
+		BufferedWriter bw = new BufferedWriter(target);
+		
+		String email = br.readLine();
+
+		while (email != null) {
+
+			if (email.endsWith("@gmail.com")) {
+				System.out.println(email);
+				bw.write(email);
+				bw.newLine();
+			}
+			email = br.readLine();
+		}
+
+		br.close();
+		bw.close();
+
+	
+
+}
+}
